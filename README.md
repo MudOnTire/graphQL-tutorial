@@ -69,7 +69,6 @@ const LaunchType = new GraphQLObjectType({
   fields: () => ({
     flight_number: { type: GraphQLInt },
     mission_name: { type: GraphQLString },
-    launch_year: { type: GraphQLString },
     launch_date_local: { type: GraphQLString },
     launch_success: { type: GraphQLBoolean },
     rocket: { type: RocketType },
@@ -320,4 +319,12 @@ app.use(cors());
 
 好了，大功告成，我们来看一下效果：
 
-![image](http://lc-jOYHMCEn.cn-n1.lcfile.com/e64e4e66b17b33e441f0.png)
+![image](http://lc-jOYHMCEn.cn-n1.lcfile.com/ed36734067161e7dcb95.png)
+
+# 结语
+
+今天GraphQL就简单介绍到这里，以后有空会更新更多关于GraphQL更深层次的用法。
+
+本文灵感来源：[Youtube Traversy Media](https://www.youtube.com/watch?v=SEMTj8w04Z8)，感谢
+
+本文完整demo：[Github@MudOnTire](https://github.com/MudOnTire/graphQL-tutorial)

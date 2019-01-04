@@ -12,7 +12,7 @@ export default function LaunchItem({ launch: { flight_number, mission_name, laun
               'text-danger': !launch_success
             })}
           >
-            {mission_name}
+            {` ${mission_name}`}
           </span>
         </h4>
         <p>Date: {launch_date_local}</p>
