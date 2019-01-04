@@ -8,7 +8,7 @@ const LAUNCHES_QUERY = gql`
     launches {
       flight_number,
       mission_name,
-      launch_year,
+      launch_date_local,
       launch_success,
     }
   }

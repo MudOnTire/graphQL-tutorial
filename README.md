@@ -34,7 +34,7 @@
 $ npm i graphql express-graphql express axios
 ```
 
-创建入口文件 `server.js`，里面创建一个express服务。使用graphQL我们只需要设置一个路由，所有的请求都由这个graphQL的request handler处理：
+创建入口文件 `server.js`，里面创建express服务。使用graphQL我们只需要设置一个路由，所有的请求都由这个graphQL的request handler处理：
 
 ```
 const express = require('express');
@@ -57,7 +57,7 @@ graphqlHTTP是grapql的http服务，用于处理graphql的查询请求，它接�
 
 ### schema
 
-接下来我们定义schema，schema意为‘模式’，其中定义了数据模型的结构、字段的类型、模型间的关系，是graphQL实现的核心。
+接下来我们定义schema，schema意为‘模式’，其中定义了数据模型的结构、字段的类型、模型间的关系，是graphQL的核心。
 
 新建`schema.js`文件，首先定义两个数据模型：LaunchType（发射）和 RocketType（火箭）。注意字段的数据类型需要使用GraphQL定义的，不能使用js中的基本数据类型。
 
@@ -70,7 +70,7 @@ const LaunchType = new GraphQLObjectType({
     flight_number: { type: GraphQLInt },
     mission_name: { type: GraphQLString },
     launch_year: { type: GraphQLString },
-    launch_data_local: { type: GraphQLString },
+    launch_date_local: { type: GraphQLString },
     launch_success: { type: GraphQLBoolean },
     rocket: { type: RocketType },
   })
@@ -181,7 +181,7 @@ $ npx create-react-app client
 ![image](http://lc-jOYHMCEn.cn-n1.lcfile.com/2b0165a3899ed25c3caa.png)
 
 
-GraphQL的客户端有多种实现，本次项目用 [Apollo](https://www.apollographql.com/docs/react/)，最流行的GraphQL Client。更多client请参考 [GraphQL Clients](https://graphql.org/code/#graphql-clients)。
+GraphQL的客户端有多种实现，本次项目使用 [Apollo](https://www.apollographql.com/docs/react/)，最流行的GraphQL Client。更多client请参考 [GraphQL Clients](https://graphql.org/code/#graphql-clients)。
 
 ### 安装依赖
 
@@ -231,7 +231,7 @@ export default App;
 
 ### 实现query
 
-接着我们来实现显示launch的component，新增文件 `components/Launches.js`：
+接着我们来实现显示launches的component，新增文件 `components/Launches.js`：
 
 ```
 import React, { Component, Fragment } from 'react';
@@ -244,7 +244,7 @@ const LAUNCHES_QUERY = gql`
     launches {
       flight_number,
       mission_name,
-      launch_year,
+      launch_date_local,,
       launch_success,
     }
   }
@@ -290,7 +290,7 @@ export default function LaunchItem({ launch: { flight_number, mission_name, laun
     <div className="card card-body mb-3">
       <div className="col-md-9">
         <h4>Mission: {mission_name}</h4>
-        <p>Date: {launch_date_local}</p>
+        <p>Date: {launch_date_local,}</p>
       </div>
       <div className="col-md-3">
         <button className="btn btn-secondary">Launch Details</button>
