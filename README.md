@@ -323,7 +323,7 @@ app.use(cors());
 
 # 结语
 
-今天GraphQL就简单介绍到这里，以后有空会更新更多关于GraphQL更深层次的用法。
+今天就主要介绍GraphQL工程的搭建和GraphQL Query的使用，更多关于GraphQL的内容比如 [Mudtation](https://www.apollographql.com/docs/react/essentials/mutations.html)下次有空会跟大家逐步讲解。
 
 本文灵感来源：[Youtube Traversy Media](https://www.youtube.com/watch?v=SEMTj8w04Z8)，感谢
 
