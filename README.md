@@ -325,6 +325,8 @@ app.use(cors());
 
 今天就主要介绍GraphQL工程的搭建和GraphQL Query的使用，更多关于GraphQL的内容比如 [Mudtation](https://www.apollographql.com/docs/react/essentials/mutations.html)下次有空会跟大家逐步讲解。
 
-本文灵感来源：[Youtube Traversy Media](https://www.youtube.com/watch?v=SEMTj8w04Z8)，感谢
+本文灵感来源：[Youtube@Traversy Media](https://www.youtube.com/watch?v=SEMTj8w04Z8)，感谢
 
-本文完整demo：[Github@MudOnTire](https://github.com/MudOnTire/graphQL-tutorial)
+本文Demo Github地址：[Github@MudOnTire](https://github.com/MudOnTire/graphQL-tutorial)
+
+本文Demo线上展示：[Heroku@graphql-spacex-launches](https://graphql-spacex-launches.herokuapp.com/)
