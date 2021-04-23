@@ -36,7 +36,7 @@ $ npm i graphql express-graphql express axios
 
 创建入口文件 `server.js`，里面创建express服务。使用graphQL我们只需要设置一个路由，所有的请求都由这个graphQL的request handler处理：
 
-```
+```js
 const express = require('express');
 const graphqlHTTP = require('express-graphql');
 const schema = require('./schema');
@@ -61,7 +61,7 @@ graphqlHTTP是grapql的http服务，用于处理graphql的查询请求，它接�
 
 新建`schema.js`文件，首先定义两个数据模型：LaunchType（发射）和 RocketType（火箭）。注意字段的数据类型需要使用GraphQL定义的，不能使用js中的基本数据类型。
 
-```
+```js
 const { GraphQLObjectType, GraphQLInt, GraphQLString, GraphQLBoolean, GraphQLList, GraphQLSchema } = require('graphql');
 
 const LaunchType = new GraphQLObjectType({
@@ -89,7 +89,7 @@ const LaunchType = new GraphQLObjectType({
 
 在 `schema.js`中增加代码：
 
-```
+```js
 const axios = require('axios');
 
 ...
@@ -131,7 +131,7 @@ module.exports = new GraphQLSchema({
 
 我们也可以通过传入参数查询单条信息：
 
-```
+```js
 const RootQuery = new GraphQLObjectType({
   name: 'RootQueryType',
   fields: {
@@ -168,7 +168,7 @@ $ npx create-react-app client
 
 为了便于调试，在`package.json`中增加scripts：
 
-```
+```json
 "start": "node server.js",
 "server": "nodemon server.js",
 "client": "npm start --prefix client",
@@ -198,7 +198,7 @@ $ npm i apollo-boost react-apollo graphql
 
 修改`App.js`内容如下：
 
-```
+```js
 import React, { Component } from 'react';
 import ApolloClient from 'apollo-boost';
 import { ApolloProvider } from 'react-apollo';
@@ -232,7 +232,7 @@ export default App;
 
 接着我们来实现显示launches的component，新增文件 `components/Launches.js`：
 
-```
+```js
 import React, { Component, Fragment } from 'react';
 import gql from 'graphql-tag';
 import { Query } from 'react-apollo';
@@ -281,7 +281,7 @@ query语句通过 `graphql-tag` 定义，传入 `<Query>` 执行获取数据并�
 
 `components/LaunchItem.js`:
 
-```
+```js
 import React from 'react'
 
 export default function LaunchItem({ launch: { flight_number, mission_name, launch_date_local, launch_success } }) {
@@ -307,7 +307,7 @@ export default function LaunchItem({ launch: { flight_number, mission_name, laun
 
 `server.js`
 
-```
+```js
 const cors = require('cors');
 
 ...
